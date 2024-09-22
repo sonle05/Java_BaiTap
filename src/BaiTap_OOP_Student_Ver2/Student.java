@@ -1,14 +1,13 @@
 package BaiTap_OOP_Student_Ver2;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 public class Student extends Person {
     private float gpa;
     private String major;
     private boolean scholarship; // Cờ để đánh dấu sinh viên có học bổng
     private double tuition;
-
     private final double BASE_TUITION = 10000000; // Học phí cơ bản là 10 triệu
 
     public Student(String id, String fullName, Date dateOfBirth, float gpa, String major) {
@@ -48,6 +47,9 @@ public class Student extends Person {
         } else {
             return BASE_TUITION;
         }
+    }
+    
+    public void addStudent() {
     }
 
     @Override

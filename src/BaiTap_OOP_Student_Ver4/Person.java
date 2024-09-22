@@ -1,4 +1,5 @@
-package BaiTap_OOP_Student_Ver3;
+package BaiTap_OOP_Student_Ver4;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -45,6 +46,10 @@ public abstract class Person implements IPerson {
     }
 
     // Abstract methods
+    @Override
+    public abstract void addPerson();
+    @Override
+    public abstract void updatePerson(String id);
     @Override
     public abstract void displayInfo();
 }

@@ -1,4 +1,5 @@
-package BaiTap_OOP_Student_Ver3;
+package BaiTap_OOP_Student_Ver4;
+
 import java.util.Date;
 
 public class Teacher extends Person {
@@ -28,11 +29,13 @@ public class Teacher extends Person {
         this.teachingSubject = teachingSubject;
     }
 
-    public void addTeacher() {
+    @Override
+    public void addPerson() {
         // Logic to add a teacher
     }
 
-    public void updateTeacher(String id) {
+    @Override
+    public void updatePerson(String id) {
         // Logic to update a teacher by ID
     }
 
@@ -45,4 +48,3 @@ public class Teacher extends Person {
         System.out.println("Teaching Subject: " + getTeachingSubject());
     }
 }
-

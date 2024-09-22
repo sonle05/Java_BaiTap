@@ -34,7 +34,7 @@ public class StudentList {
         String major = scanner.nextLine();
 
         Student student = new Student(id, fullName, dob, gpa, major);
-        studentList.add(student);
+        studentList.add(student);   //Thêm 1 đối tượng student vào danh sách studentList
         System.out.println("Student added successfully.");
     }
 
@@ -73,9 +73,9 @@ public class StudentList {
         System.out.print("Enter student ID to delete: ");
         String id = scanner.nextLine();
 
-        Student student = findStudentById(id);
+        Student student = findStudentById(id);  //Tìm id student muốn xoá
         if (student != null) {
-            studentList.remove(student);
+            studentList.remove(student);    //Xoá student tương ứng với id của student đó ở trong studentList
             System.out.println("Student with ID " + id + " deleted successfully.");
         } else {
             System.out.println("Student not found.");
@@ -84,7 +84,7 @@ public class StudentList {
 
     // Method to find a student by id
     public Student findStudentById(String id) {
-        for (Student student : studentList) {
+        for (Student student : studentList) {   //Bắt đầu vòng lặp qua từng đối tượng Student trong studentList
             if (student.getId().equals(id)) {
                 return student;
             }
@@ -94,10 +94,10 @@ public class StudentList {
 
     // Method to display all students
     public void displayAllStudents() {
-        if (studentList.isEmpty()) {
+        if (studentList.isEmpty()) {    // "isEmpty" dùng để kiểm tra xem danh sách có rỗng không
             System.out.println("No students found.");
         } else {
-            for (Student student : studentList) {
+            for (Student student : studentList) {   //Bắt đầu vòng lặp qua từng đối tượng Student trong studentList
                 student.displayInfo();
                 System.out.println("-------------");
             }
@@ -106,15 +106,19 @@ public class StudentList {
 
     // Method to find the student with the highest GPA
     public void findTopStudent() {
-        if (studentList.isEmpty()) {
+        if (studentList.isEmpty()) {    // "isEmpty" dùng để kiểm tra xem danh sách có rỗng không
             System.out.println("No students available.");
             return;
         }
 
-        Student topStudent = studentList.get(0);
+        Student topStudent = studentList.get(0);    
+        //Khởi tạo biến "topStudent" với student đầu tiên trong studentList
         for (Student student : studentList) {
+        //Bắt đầu vòng lặp qua từng đối tượng Student trong studentList
             if (student.getGpa() > topStudent.getGpa()) {
+            //Kiểm tra xem GPA của student hiện tại có lớn hơn GPA của topStudent không
                 topStudent = student;
+                //Nếu điều kiện trên đúng, gán topStudent cho student hiện tại vì có GPA cao hơn
             }
         }
         System.out.println("Top student:");

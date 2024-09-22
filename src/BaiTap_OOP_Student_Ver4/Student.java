@@ -1,13 +1,11 @@
-package BaiTap_OOP_Student_Ver1;
-import java.text.SimpleDateFormat;
+package BaiTap_OOP_Student_Ver4;
+
 import java.util.Date;
 
-public class Student extends Person implements IPerson {
+public class Student extends Person {
     private float gpa;
     private String major;
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");    
 
-    // Constructor
     public Student(String id, String fullName, Date dateOfBirth, float gpa, String major) {
         super(id, fullName, dateOfBirth);
         this.gpa = gpa;
@@ -30,16 +28,23 @@ public class Student extends Person implements IPerson {
     public void setMajor(String major) {
         this.major = major;
     }
-    
-    public void addStudent() {
+
+    @Override
+    public void addPerson() {
+        // Logic to add a student
+    }
+
+    @Override
+    public void updatePerson(String id) {
+        // Logic to update a student by ID
     }
 
     @Override
     public void displayInfo() {
         System.out.println("Student ID: " + getId());
         System.out.println("Full Name: " + getFullName());
-        System.out.println("Date of Birth: " + sdf.format(getDateOfBirth()));
-        System.out.println("GPA: " + gpa);
-        System.out.println("Major: " + major);
+        System.out.println("Date of Birth: " + getFormattedDateOfBirth());
+        System.out.println("GPA: " + getGpa());
+        System.out.println("Major: " + getMajor());
     }
 }
